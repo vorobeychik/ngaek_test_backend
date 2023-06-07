@@ -84,7 +84,7 @@ export class TestService {
   }
 
   findAll() {
-    return `This action returns all test`;
+    return this.testRepository.find();
   }
 
   findOne(id: number) {

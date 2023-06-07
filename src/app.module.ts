@@ -11,6 +11,8 @@ import { Test } from './test/entities/test.entity';
 import { TrueFalseQuestion } from './test/entities/trueFalseQustion';
 import { SelectQuestion } from './test/entities/selectQuestion';
 import { inputQuestion } from './test/entities/inputQuestion';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -28,6 +30,10 @@ import { inputQuestion } from './test/entities/inputQuestion';
       entities: [Admin, Test, TrueFalseQuestion, SelectQuestion, inputQuestion],
       synchronize: true,
     }),
+    // ServeStaticModule.forRoot({
+    //   rootPath: join(__dirname, '..', 'static'),
+    //   exclude: ['/api/(.*)'],
+    // }),
     AuthModule,
     TestModule,
   ],
